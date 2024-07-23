@@ -1,7 +1,13 @@
 "use client";
 import "./docker.css";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import { useState } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
+import { GoBook } from "react-icons/go";
+
+const plus = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+});
 
 const DockerGuide = () => {
   const [copiedCommand, setCopiedCommand] = useState<string | null>(null);
@@ -45,8 +51,40 @@ CMD ["node", "index.js"]
 
   return (
     <div className="mt-24 py-12 px-8 md:px-20 lg:px-20">
-      <h1 className="text-6xl pb-6 font-semibold text-center">
-        What is Docker?
+      <div className={`flex flex-col ${plus.className}`}>
+        <div className="text-center my-4">
+          <h1 className="text-5xl md:text-6xl my-4 font-semibold">
+            What is Docker?
+          </h1>
+          <h2 className="text-lg md:text-2xl my-6">
+            Code doesn&apos;t work in your machine? Docker is here to save the
+            day!
+          </h2>
+          <h3 className="text-lg md:text-xl mb-6 text-[#777777]">
+            Solves the age-old problem of &quot;It works on my machine!&quot;
+          </h3>
+
+          <div className="flex space-x-3 items-center justify-center">
+            <img
+              src="/me.jpeg"
+              alt="sidharth"
+              className=" w-12 h-12 md:w-20 md:h-20 rounded-full object-cover"
+            />
+            <p className="md:text-xl md:flex hidden px-2 font-semibold">
+              P Sidharth{" "}
+            </p>
+            <p className="text-sm md:text-xl px-1">|</p>
+            <p className="text-sm md:text-xl px-2">24 Jul 2024</p>
+            <div className="flex space-x-4 items-center justify-between px-1">
+              <GoBook />
+              <p className="text-sm md:text-xl">10 min</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr className="py-8" />
+      <h1 className="text-4xl pb-6 font-semibold">
+        Intro
       </h1>
       <p className="pb-8 text-neutral-500">
         Docker is a platform that uses containers to create, deploy, and run

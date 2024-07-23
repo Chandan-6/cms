@@ -19,7 +19,7 @@ export default function Navbar() {
   return (
     <div
       className={`px-8 md:px-20 lg:px-20 
-      flex justify-between items-center border-b-[1px] backdrop-blur-xl border-neutral-500 uppercase fixed top-0 w-full z-50 ${plus.className}`}
+      flex justify-between items-center border-b-[1px] backdrop-blur-xl dark:border-neutral-800 border-neutral-300 uppercase fixed top-0 w-full z-50 ${plus.className}`}
     >
       <a href="/" className="flex gap-4 items-center py-6">
         <p className="font-bold text-outline text-2xl border-[1.5px] border-black dark:border-white px-[0.6rem] py-[2px] rounded-md hover:bg-black hover:text-outline-white hover:scale-[110%] transition-all duration-300">

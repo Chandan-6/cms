@@ -18,7 +18,7 @@ export default function BlogCard({
   return (
     <a
       href={link}
-      className="flex flex-col  cursor-pointer p-4 my-2 rounded-xl border hover:bg-neutral-900 border-neutral-800 hover:border-neutral-700 transition-all duration-300"
+      className="flex flex-col  cursor-pointer p-4 my-2 rounded-xl border hover:bg-neutral-50 hover:border-neutral-400 dark:hover:bg-neutral-900 dark:border-neutral-800 transition-all duration-300"
     >
       <h2 className="text-2xl font-semibold">{title}</h2>
       <p className="text-lg text-neutral-500 mt-2">{description}</p>
