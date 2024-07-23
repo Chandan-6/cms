@@ -4,7 +4,7 @@ function NotFound() {
   return (
     <div className="h-screen flex flex-col justify-center items-center bg-gradient-to-b from-black to-neutral-800">
       <h1 className="text-3xl md:text-5xl text-center  mb-6 ">
-       404 Page , it doesn't exist 🚧
+       404 Page , it doesn&apos;t exist 🚧
       </h1>
       <p className="text-2xl text-center  mb-8 animate-pulse">
         Not all who wander are lost, but you are.
@@ -18,9 +18,9 @@ function NotFound() {
         Home
       </a>
       <div className="mt-8 text-center text-white text-opacity-60">
-        <p>While you're here, enjoy this funny 404 page. 🎉</p>
+        <p>While you&apos;re here, enjoy this funny 404 page. 🎉</p>
         <p>
-          Here's a random fact: Bananas are berries, but strawberries aren't!
+          Here&apos;s a random fact: Bananas are berries, but strawberries aren&apos;t!
         </p>
       </div>
     </div>

@@ -74,18 +74,18 @@ CMD ["node", "index.js"]
         Containerizing a Node.js App
       </h2>
       <p className="pb-4 text-neutral-500">
-        Let's containerize a simple Node.js app that listens on port 3000.
+        Let&apos;s containerize a simple Node.js app that listens on port 3000.
         Suppose our Node.js app consists of the following:
       </p>
       <pre className="dark:bg-neutral-900 bg-neutral-200 p-4 rounded-lg mb-4">
         <code className="dark:text-yellow-600 text-yellow-800 flex-wrap">
           {`// index.js
-const express = require('express');
+const express = require(&apos;express&apos;);
 const app = express();
 const PORT = 3000;
 
-app.get('/', (req, res) => {
-  res.send('Hello, Docker!');
+app.get(&apos;/&apos;, (req, res) => {
+  res.send(&apos;Hello, Docker!&apos;);
 });
 
 app.listen(PORT, () => {
