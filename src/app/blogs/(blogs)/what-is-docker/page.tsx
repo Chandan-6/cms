@@ -80,12 +80,12 @@ CMD ["node", "index.js"]
       <pre className="dark:bg-neutral-900 bg-neutral-200 p-4 rounded-lg mb-4">
         <code className="dark:text-yellow-600 text-yellow-800 flex-wrap">
           {`// index.js
-const express = require(&apos;express&apos;);
+const express = require('express');
 const app = express();
 const PORT = 3000;
 
-app.get(&apos;/&apos;, (req, res) => {
-  res.send(&apos;Hello, Docker!&apos;);
+app.get('/', (req, res) => {
+  res.send('Hello, Docker!');
 });
 
 app.listen(PORT, () => {
@@ -97,7 +97,7 @@ app.listen(PORT, () => {
       </pre>
       <p className="pb-4 text-neutral-500">
         This Node.js app uses Express to set up a server that listens on port
-        3000 and returns "Hello, Docker!" when accessed.
+        3000 and returns &quot;Hello, Docker!&quot; when accessed.
       </p>
       {commands.map((item, index) => (
         <div key={index} className="pb-8">
@@ -113,7 +113,9 @@ app.listen(PORT, () => {
           >
             <button
               className={`dark:bg-neutral-900 bg-neutral-200 py-2 px-4 rounded-lg ${
-                copiedCommand === item.command ? " dark:bg-green-900 dark:text-green-500 bg-green-500 text-green-950" : ""
+                copiedCommand === item.command
+                  ? " dark:bg-green-900 dark:text-green-500 bg-green-500 text-green-950"
+                  : ""
               }`}
             >
               {copiedCommand === item.command ? "Copied!" : "Copy Command"}
@@ -128,8 +130,8 @@ app.listen(PORT, () => {
                 </p>
                 <ul className="list-disc list-inside code-snippet">
                   <li>
-                    <code>FROM node:14</code>:   Specifies the base image to
-                    use, in this case, Node.js version 14.
+                    <code>FROM node:14</code>: Specifies the base image to use,
+                    in this case, Node.js version 14.
                   </li>
                   <li>
                     <code>WORKDIR /app</code>: Sets the working directory in the
@@ -153,8 +155,8 @@ app.listen(PORT, () => {
                     outside the container.
                   </li>
                   <li>
-                    <code>CMD ["node", "index.js"]</code>: Specifies the command
-                    to run the application.
+                    <code>CMD [&quot;node&quot;, &quot;index.js&quot;]</code>:
+                    Specifies the command to run the application.
                   </li>
                 </ul>
               </>
