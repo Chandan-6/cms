@@ -5,17 +5,17 @@ const roadmapData = [
   {
     title: "Frontend",
     icon: <BsCodeSlash />,
-    skills: ["HTML", "CSS", "JavaScript", "React", "Vue.js", "Angular"],
+    skills: ["Vanilla JavaScript", "React", "Vue.js", "Angular", "Svelte", "Solid JS"],
   },
   {
     title: "Backend",
     icon: <BsServer />,
-    skills: ["Node.js", "Express", "Django", "Ruby on Rails", "ASP.NET"],
+    skills: ["Express", "Django", "Next.js", "Spring Boot", "ASP.NET"],
   },
   {
     title: "Database",
     icon: <BsDatabase />,
-    skills: ["SQL", "MongoDB", "PostgreSQL", "Redis", "Firebase"],
+    skills: ["SQL", "MongoDB", "PostgreSQL", "Redis", "Firebase", "Supabase"],
   },
   {
     title: "DevOps",

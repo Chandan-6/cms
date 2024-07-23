@@ -58,7 +58,7 @@ const cloudDevOpsRoadmapData = [
     ]
   },
   {
-    title: "Containerization & Orchestration",
+    title: "Containers & Orchestration",
     icon: <BsGear />,
     skills: [
       "Docker",
@@ -96,19 +96,6 @@ const cloudDevOpsRoadmapData = [
       "Security Automation"
     ]
   },
-  {
-    title: "DevOps Practices",
-    icon: <BsGear />,
-    skills: [
-      "Agile Methodologies",
-      "Version Control (Git)",
-      "Microservices Architecture",
-      "Infrastructure Monitoring",
-      "Incident Management",
-      "Configuration Management",
-      "Chaos Engineering"
-    ]
-  }
 ];
 
 const RoadmapCard = ({ title, icon, skills }:any) => (
@@ -130,7 +117,7 @@ const RoadmapCard = ({ title, icon, skills }:any) => (
 
 const CloudDevOpsRoadmap = () => {
   return (
-    <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8">
+    <div className="py-12 px-4 sm:px-6 lg:px-8 border-b border-b-neutral-700">
       <div className="max-w-7xl mx-auto">
         <h1 className="text-4xl font-bold text-center mb-12">
           Cloud & DevOps Roadmap
