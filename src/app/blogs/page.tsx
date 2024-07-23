@@ -31,6 +31,7 @@ export default function Page() {
               readTime={blog.readTime}
               author={blog.author}
               date={blog.date}
+              link={blog.link}
             />
           ))
         ) : (
