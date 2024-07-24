@@ -7,9 +7,10 @@ export function middleware(request: NextRequest) {
   const isPublicPath = path === "/login" || path === "/signin";
 
   // Dev mode
-  const Next_auth_token = request.cookies.get("next-auth.session-token")?.value || '';
+  // const Next_auth_token = request.cookies.get("next-auth.session-token")?.value || '';
+  
   // Production mode
-//   const Next_auth_token = request.cookies.get("__Secure-next-auth.session-token")?.value;
+  const Next_auth_token = request.cookies.get("__Secure-next-auth.session-token")?.value;
 
   // Redirect authenticated users from root path to home
   if (isPublicPath && Next_auth_token) {
