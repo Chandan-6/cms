@@ -2,8 +2,11 @@
 import { useState } from "react";
 import BlogCard from "@/components/BlogCard";
 import blogs from "@/utils/blogs";
+import { useSession } from "next-auth/react";
+
 
 export default function Page() {
+  const { data : session } = useSession();
   const [searchTerm, setSearchTerm] = useState("");
 
   const filteredBlogs = blogs.filter((blog) =>

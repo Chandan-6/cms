@@ -1,15 +1,21 @@
 "use client";
 import ThemeSwitch from "@/app/ThemeSwitch";
 import { Plus_Jakarta_Sans } from "next/font/google";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { RiMenuLine } from "react-icons/ri";
+import { usePathname } from 'next/navigation'
+import { useSession } from "next-auth/react";
 
 const plus = Plus_Jakarta_Sans({
   subsets: ["latin"],
 });
 
 export default function Navbar() {
+  const { data : session } = useSession();
+  const imgSrc = session?.user?.image || "";
+
   const [isNavOpen, setIsNavOpen] = useState(false);
+  const pathname = usePathname()
 
   const toggleNav = () => {
     console.log("Toggle Nav Clicked");
@@ -18,7 +24,7 @@ export default function Navbar() {
 
   return (
     <div
-      className={`px-8 md:px-20 lg:px-20 
+      className={`${pathname === '/signin' ? "hidden" : ""} px-8 md:px-20 lg:px-20 
       flex justify-between items-center border-b-[1px] backdrop-blur-xl dark:border-neutral-800 border-neutral-300 uppercase fixed top-0 w-full z-50 ${plus.className}`}
     >
       <a href="/" className="flex gap-4 items-center py-6">
@@ -58,10 +64,12 @@ export default function Navbar() {
         >
           Road Maps
         </a>
-        <div className="flex flex-col items-center justify-center">
+        <div className="flex gap-7 items-center justify-center">
           <ThemeSwitch />
+          {session && <img src={imgSrc} alt="user profile" className="w-7 h-7 rounded-full" />}
+
         </div>
-      </div>
+        </div>
       <RiMenuLine
         onClick={toggleNav}
         className="flex lg:hidden w-5 h-5 cursor-pointer"
