@@ -1,11 +1,19 @@
 import React from "react";
 import { BsCodeSlash, BsServer, BsDatabase, BsTools } from "react-icons/bs";
+import { FiArrowUpRight } from "react-icons/fi";
 
 const roadmapData = [
   {
     title: "Frontend",
     icon: <BsCodeSlash />,
-    skills: ["Vanilla JavaScript", "React", "Vue.js", "Angular", "Svelte", "Solid JS"],
+    skills: [
+      "Vanilla JavaScript",
+      "React",
+      "Vue.js",
+      "Angular",
+      "Svelte",
+      "Solid JS",
+    ],
   },
   {
     title: "Backend",
@@ -45,9 +53,7 @@ const FullStackRoadmap = () => {
   return (
     <div className="py-12 px-4 sm:px-6 border-b border-b-neutral-700">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-4xl text-center mb-12 ">
-          Full Stack Developer
-        </h1>
+        <h1 className="text-4xl text-center mb-12 ">Full Stack Developer</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {roadmapData.map((section, index) => (
             <RoadmapCard key={index} {...section} />

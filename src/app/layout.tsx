@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Mono } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
-import { GeistSans } from "geist/font/sans";
 import Provider from "./providers";
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+});
 
 // ... rest of your code
 export const metadata: Metadata = {
@@ -18,7 +21,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`dark:bg-black dark:text-white ${GeistSans.className}`} suppressHydrationWarning>
+      <body
+        className={`dark:bg-black dark:text-white ${plusJakartaSans.className}`}
+        suppressHydrationWarning
+      >
         <Provider>
           <Navbar />
           {children}

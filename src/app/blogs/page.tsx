@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useState } from "react";
 import BlogCard from "@/components/BlogCard";
 import blogs from "@/utils/blogs";
@@ -6,9 +6,10 @@ import blogs from "@/utils/blogs";
 export default function Page() {
   const [searchTerm, setSearchTerm] = useState("");
 
-  const filteredBlogs = blogs.filter((blog) =>
-    blog.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    blog.description.toLowerCase().includes(searchTerm.toLowerCase())
+  const filteredBlogs = blogs.filter(
+    (blog) =>
+      blog.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      blog.description.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
@@ -21,12 +22,17 @@ export default function Page() {
         onChange={(e) => setSearchTerm(e.target.value)}
         className="w-full p-2 border border-neutral-800 dark:bg-black dark:text-white focus:outline-none rounded-lg"
       />
-      <div className="space-y-6">
+
+      <div className="grid grid-cols-3 gap-4">
         {filteredBlogs.length > 0 ? (
           filteredBlogs.map((blog, index) => (
             <BlogCard
               key={index}
               title={blog.title}
+              image={
+                blog.image ||
+                "https://developers.google.com/static/focus/images/latest-chrome.png"
+              }
               description={blog.description}
               readTime={blog.readTime}
               author={blog.author}
