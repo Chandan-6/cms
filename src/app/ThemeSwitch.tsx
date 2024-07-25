@@ -10,10 +10,26 @@ export default function ThemeSwitch() {
 
   useEffect(() => setMounted(true), []);
 
-  if (!mounted) return <FiMoon className="w-8 h-8  cursor-pointer border border-neutral-600 p-2" onClick={() => setTheme("dark")} />;;
+  if (!mounted)
+    return (
+      <FiMoon
+        className="w-8 h-8  cursor-pointer border border-neutral-600 p-2 rounded-full"
+        onClick={() => setTheme("dark")}
+      />
+    );
 
   if (resolvedTheme === "light")
-    return <FiMoon className="w-8 h-8  cursor-pointer border border-neutral-600 p-2 rounded-full" onClick={() => setTheme("dark")} />;
+    return (
+      <FiMoon
+        className="w-8 h-8  cursor-pointer border border-neutral-600 p-2 rounded-full"
+        onClick={() => setTheme("dark")}
+      />
+    );
 
-  return <FiSun className="w-8 h-8  cursor-pointer border border-neutral-600 p-2 rounded-full" onClick={() => setTheme("light")} />;
+  return (
+    <FiSun
+      className="w-8 h-8  cursor-pointer border border-neutral-600 p-2 rounded-full"
+      onClick={() => setTheme("light")}
+    />
+  );
 }

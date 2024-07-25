@@ -3,6 +3,7 @@ import { PiClockLight } from "react-icons/pi";
 export default function BlogCard({
   title,
   description,
+  image,
   readTime,
   author,
   date,
@@ -10,6 +11,7 @@ export default function BlogCard({
 }: {
   title: string;
   description: string;
+  image: string;
   readTime: string;
   author: string;
   date: string;
@@ -18,17 +20,20 @@ export default function BlogCard({
   return (
     <a
       href={link}
-      className="flex flex-col  cursor-pointer p-4 my-2 rounded-xl border hover:bg-neutral-50 hover:border-neutral-400 dark:hover:bg-neutral-900 dark:border-neutral-800 transition-all duration-300"
+      className="flex flex-col  cursor-pointer rounded-xl overflow-clip border-black border dark:hover:bg-neutral-900 dark:border-white/30 transition-all duration-300"
     >
-      <h2 className="text-2xl font-semibold">{title}</h2>
-      <p className="text-lg text-neutral-500 mt-2">{description}</p>
-      <div className="flex space-x-2 items-center justify-start mt-2">
-        <p>{author}</p>
-        <p>{date}</p>
-      </div>
-      <div className="flex space-x-2 items-center justify-start mt-2">
-        <PiClockLight />
-        <p>{readTime}</p>
+      <img className="h-64 object-cover" src={image} />
+      <div className="p-6 flex flex-col grow">
+        <h2 className="text-2xl font-semibold">{title}</h2>
+        <p className="my-2 line-clamp-3">{description}</p>
+        <p className="text-sm font-medium mt-auto">
+          {author}
+          <span className="ml-2 opacity-50">{date}</span>
+        </p>
+        <div className="flex space-x-2 items-center justify-start mt-2">
+          <PiClockLight />
+          <p className="text-sm">{readTime}</p>
+        </div>
       </div>
     </a>
   );

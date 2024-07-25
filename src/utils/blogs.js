@@ -7,6 +7,7 @@ const blogs = [
     author: "Philkhana Sidharth",
     date: "Jul 24, 2024",
     link: "/blogs/what-is-docker",
+    image: "/blog-headers/docker.png",
   },
   {
     title: "Twitter Clone with Next.js",
