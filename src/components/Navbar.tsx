@@ -5,6 +5,7 @@ import React, { useEffect, useState } from "react";
 import { RiMenuLine } from "react-icons/ri";
 import { usePathname } from "next/navigation";
 import { useSession } from "next-auth/react";
+import { signIn } from "next-auth/react";
 
 const plus = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -70,12 +71,21 @@ export default function Navbar() {
         </a>
         <div className="flex gap-7 items-center justify-center">
           <ThemeSwitch />
-          {session && (
+          {session ? (
             <img
               src={imgSrc}
               alt="user profile"
               className="w-7 h-7 rounded-full"
             />
+          ) : (
+            <button
+              className=" border border-neutral-600 p-2 px-4 rounded-full"
+              onClick={() => {
+                signIn("google");
+              }}
+            >
+              Sign in
+            </button>
           )}
         </div>
       </div>
